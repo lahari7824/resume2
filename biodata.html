@@ -1,0 +1,84 @@
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const toggleButton = document.createElement('button');
+        toggleButton.textContent = "Toggle Dark Mode";
+        toggleButton.style.position = "fixed";
+        toggleButton.style.bottom = "20px";
+        toggleButton.style.right = "20px";
+        toggleButton.style.padding = "10px 20px";
+        toggleButton.style.border = "none";
+        toggleButton.style.borderRadius = "5px";
+        toggleButton.style.backgroundColor = "#61875f"; // Earthy green
+        toggleButton.style.color = "#fff";
+        toggleButton.style.cursor = "pointer";
+        toggleButton.style.zIndex = "1000";
+
+        document.body.appendChild(toggleButton);
+
+        const toggleDarkMode = () => {
+            const isDarkMode = document.body.classList.toggle("dark-mode");
+
+            // Save mode to localStorage
+            localStorage.setItem("darkMode", isDarkMode ? "enabled" : "disabled");
+        };
+
+        // Apply dark mode from localStorage if previously enabled
+        if (localStorage.getItem("darkMode") === "enabled") {
+            document.body.classList.add("dark-mode");
+        }
+
+        toggleButton.addEventListener("click", toggleDarkMode);
+    });
+</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bio-data</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>My Bio-data</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="resume.html">Resume</a>
+        </nav>
+    </header>
+    <main id="biodata-main">
+        <section class="biodata-form">
+            <h2>BIO DATA</h2>
+            <div class="form-container">
+                <div class="form-left">
+                    <pre>Name           : S Naga Lahari</pre>
+                    <pre>Father's Name  : S Prasad</pre>
+                    <pre>Mobile         : 7338528678</pre>
+                    <pre>Email ID       : snla22cs@cmrit.ac.in</pre>
+                    <pre>Gender         : Female</pre>
+                    <pre>Date of Birth  : 24/08/2004</pre>
+                    <pre>Nationality    : Indian</pre>
+                    <pre>Languages Known: Kannada, English, Hindi</pre>
+                    <pre>Address        : 632, SLN Classic Ladies PG,
+                 1st main, AECS Layout, 
+                 Bangalore, Karnataka - 560037</pre>
+                </div>
+                
+            </div>
+            <div class="declaration">
+                <h3>Declaration</h3>
+                <p>I hereby declare that all the information provided here is true to the best of my knowledge.</p>
+            </div>
+            <div class="signature">
+                <pre>Place: Bengaluru</pre>
+                <pre>Date : 20/11/2024</pre>
+                <p class="align-right">Signature: lahari</p>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>© 2024 lahari. All rights reserved.</p>
+    </footer>
+</body>
+</html>
